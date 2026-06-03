@@ -1,0 +1,578 @@
+/* ═══════════════════════════════════════════════════════════
+   VETERİNER REHBERİ - STILLER
+   Tüm seçiciler #vetrh-app altında izole edilmiştir.
+   Sitedeki hiçbir bileşenle çakışmaz.
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+#vetrh-app {
+  --vetrh-navy:        #14213D;
+  --vetrh-navy-deep:   #0E1A30;
+  --vetrh-gold:        #C9A55B;
+  --vetrh-gold-light:  #E5C77E;
+  --vetrh-gold-dark:   #8E7330;
+  --vetrh-cream:       #F7F2E7;
+  --vetrh-cream-2:     #FBF7EE;
+  --vetrh-ink:         #14213D;
+  --vetrh-ink-2:       #5A6378;
+  --vetrh-ink-3:       #8E96A6;
+  --vetrh-line:        rgba(20, 33, 61, 0.10);
+  --vetrh-line-2:      rgba(20, 33, 61, 0.20);
+  --vetrh-gold-grad:   linear-gradient(135deg, #E5C77E 0%, #C9A55B 50%, #A0833D 100%);
+  --vetrh-gold-grad-soft: linear-gradient(135deg, rgba(229,199,126,0.18), rgba(201,165,91,0.10));
+  --vetrh-serif:       "Oswald", "Bebas Neue", Arial, sans-serif;
+  --vetrh-sans:        "DM Sans", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  
+  font-family: var(--vetrh-sans) !important;
+  color: var(--vetrh-ink) !important;
+  background: var(--vetrh-cream) !important;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5 !important;
+  font-size: 15px !important;
+  display: block !important;
+  width: 100% !important;
+  position: relative !important;
+}
+#vetrh-app *,
+#vetrh-app *::before,
+#vetrh-app *::after { 
+  box-sizing: border-box !important; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* === HERO === */
+#vetrh-app .vetrh-hero {
+  background: var(--vetrh-navy) !important;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(229,199,126,0.18), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(201,165,91,0.12), transparent 55%),
+    linear-gradient(180deg, var(--vetrh-navy-deep) 0%, var(--vetrh-navy) 100%) !important;
+  color: #fff !important;
+  padding: 70px 0 70px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+#vetrh-app .vetrh-hero::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: var(--vetrh-gold-grad);
+  opacity: 0.6;
+}
+#vetrh-app .vetrh-container { 
+  max-width: 1200px !important; 
+  margin: 0 auto !important; 
+  padding: 0 24px !important; 
+  position: relative !important;
+}
+#vetrh-app .vetrh-hero-content { max-width: 820px !important; }
+
+#vetrh-app .vetrh-eyebrow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  font-family: var(--vetrh-serif) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.34em !important;
+  text-transform: uppercase !important;
+  color: var(--vetrh-gold-light) !important;
+  font-weight: 400 !important;
+  margin-bottom: 28px !important;
+}
+#vetrh-app .vetrh-eyebrow::before {
+  content: '';
+  width: 44px;
+  height: 1px;
+  background: var(--vetrh-gold);
+  flex-shrink: 0;
+}
+#vetrh-app .vetrh-eyebrow span {
+  color: rgba(255,255,255,0.55) !important;
+  margin-left: 4px !important;
+  font-weight: 300 !important;
+}
+
+#vetrh-app .vetrh-h1 {
+  font-family: var(--vetrh-serif) !important;
+  font-weight: 500 !important;
+  font-size: 56px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.005em !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  margin: 0 0 22px 0 !important;
+  display: block !important;
+}
+#vetrh-app .vetrh-h1 .vetrh-accent {
+  background: var(--vetrh-gold-grad) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  font-weight: 600 !important;
+  display: inline !important;
+}
+@media (max-width: 720px) { #vetrh-app .vetrh-h1 { font-size: 40px !important; } }
+@media (max-width: 480px) { #vetrh-app .vetrh-h1 { font-size: 32px !important; } }
+
+#vetrh-app .vetrh-lede {
+  color: rgba(255,255,255,0.78) !important;
+  font-size: 17px !important;
+  max-width: 600px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+#vetrh-app .vetrh-stats {
+  display: flex !important;
+  gap: 48px !important;
+  margin-top: 36px !important;
+  flex-wrap: wrap !important;
+}
+#vetrh-app .vetrh-stat { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  gap: 4px !important; 
+}
+#vetrh-app .vetrh-stat-num { 
+  font-family: var(--vetrh-serif) !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  color: var(--vetrh-gold-light) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.01em !important;
+}
+#vetrh-app .vetrh-stat-lab {
+  font-size: 11px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-weight: 500 !important;
+}
+
+/* === FILTER PANEL === */
+#vetrh-app .vetrh-panel-section {
+  background: var(--vetrh-cream) !important;
+  padding: 36px 0 8px !important;
+}
+#vetrh-app .vetrh-filter-panel {
+  background: #fff !important;
+  border: 1px solid var(--vetrh-line) !important;
+  border-radius: 16px !important;
+  padding: 26px !important;
+  box-shadow: 0 14px 36px -14px rgba(20, 33, 61, 0.18), 0 4px 10px rgba(20,33,61,0.04) !important;
+  position: relative !important;
+}
+#vetrh-app .vetrh-filter-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 26px; right: 26px;
+  height: 3px;
+  background: var(--vetrh-gold-grad);
+  border-radius: 0 0 3px 3px;
+}
+#vetrh-app .vetrh-filter-title {
+  font-family: var(--vetrh-serif) !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.18em !important;
+  color: var(--vetrh-gold-dark) !important;
+  margin-bottom: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+#vetrh-app .vetrh-filter-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--vetrh-line);
+}
+#vetrh-app .vetrh-filter-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1.4fr !important;
+  gap: 14px !important;
+}
+@media (max-width: 720px) { #vetrh-app .vetrh-filter-grid { grid-template-columns: 1fr !important; } }
+#vetrh-app .vetrh-field { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  gap: 6px !important; 
+  width: 100% !important;
+}
+#vetrh-app .vetrh-field-label {
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  color: var(--vetrh-ink-2) !important;
+  display: block !important;
+}
+#vetrh-app .vetrh-field select,
+#vetrh-app .vetrh-field input[type="search"],
+#vetrh-app .vetrh-field input[type="text"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-color: var(--vetrh-cream-2) !important;
+  border: 1.5px solid var(--vetrh-line) !important;
+  border-radius: 10px !important;
+  padding: 13px 16px !important;
+  font-family: var(--vetrh-sans) !important;
+  font-size: 15px !important;
+  color: var(--vetrh-ink) !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 48px !important;
+  cursor: pointer !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  float: none !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+  box-shadow: none !important;
+}
+#vetrh-app .vetrh-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238E7330' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-color: var(--vetrh-cream-2) !important;
+  padding-right: 38px !important;
+}
+#vetrh-app .vetrh-field select:hover,
+#vetrh-app .vetrh-field input[type="search"]:hover { 
+  border-color: var(--vetrh-gold) !important; 
+  background-color: #fff !important;
+}
+#vetrh-app .vetrh-field select:focus,
+#vetrh-app .vetrh-field input[type="search"]:focus {
+  outline: none !important;
+  border-color: var(--vetrh-gold) !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 0 4px rgba(201, 165, 91, 0.15) !important;
+}
+#vetrh-app .vetrh-field select:disabled { opacity: 0.6 !important; cursor: not-allowed !important; }
+#vetrh-app .vetrh-field input[type="search"] { cursor: text !important; }
+
+/* === RESULTS === */
+#vetrh-app .vetrh-results-section {
+  background: var(--vetrh-cream) !important;
+  padding: 28px 0 80px !important;
+}
+#vetrh-app .vetrh-results-bar {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 18px !important;
+  padding: 0 4px !important;
+}
+#vetrh-app .vetrh-result-count {
+  font-size: 15px !important;
+  color: var(--vetrh-ink-2) !important;
+  font-weight: 500 !important;
+}
+#vetrh-app .vetrh-result-count b { 
+  font-family: var(--vetrh-serif) !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  color: var(--vetrh-navy) !important;
+  margin-right: 4px !important;
+}
+#vetrh-app .vetrh-clear-btn {
+  background: transparent !important;
+  border: 1px solid var(--vetrh-line-2) !important;
+  color: var(--vetrh-ink-2) !important;
+  font-family: var(--vetrh-sans) !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  padding: 6px 14px !important;
+  border-radius: 100px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+}
+#vetrh-app .vetrh-clear-btn:hover { 
+  background: var(--vetrh-navy) !important; 
+  color: #fff !important;
+  border-color: var(--vetrh-navy) !important;
+}
+#vetrh-app .vetrh-results { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  gap: 14px !important; 
+}
+
+/* === EMPTY === */
+#vetrh-app .vetrh-empty {
+  text-align: center !important;
+  padding: 60px 24px 80px !important;
+  color: var(--vetrh-ink-2) !important;
+  background: #fff !important;
+  border-radius: 16px !important;
+  border: 1px dashed var(--vetrh-line) !important;
+}
+#vetrh-app .vetrh-empty-icon {
+  width: 64px; height: 64px;
+  margin: 0 auto 24px !important;
+  background: var(--vetrh-gold-grad-soft) !important;
+  border-radius: 50% !important;
+  display: grid !important; 
+  place-items: center !important;
+  color: var(--vetrh-gold-dark) !important;
+}
+#vetrh-app .vetrh-empty-icon svg { width: 30px; height: 30px; }
+#vetrh-app .vetrh-empty-title {
+  font-family: var(--vetrh-serif) !important;
+  font-size: 26px !important;
+  color: var(--vetrh-navy) !important;
+  font-weight: 500 !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+#vetrh-app .vetrh-empty-text { 
+  font-size: 14.5px !important; 
+  max-width: 380px !important; 
+  margin: 0 auto !important; 
+  color: var(--vetrh-ink-2) !important; 
+  line-height: 1.6 !important; 
+}
+
+/* === CARD === */
+#vetrh-app .vetrh-card {
+  background: #fff !important;
+  border: 1px solid var(--vetrh-line) !important;
+  border-radius: 14px !important;
+  padding: 22px 24px !important;
+  transition: all .2s !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  gap: 18px 28px !important;
+  align-items: start !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+#vetrh-app .vetrh-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--vetrh-gold-grad);
+  opacity: 0;
+  transition: opacity .2s;
+}
+#vetrh-app .vetrh-card:hover {
+  border-color: var(--vetrh-gold) !important;
+  box-shadow: 0 14px 36px -14px rgba(20, 33, 61, 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+#vetrh-app .vetrh-card:hover::before { opacity: 1; }
+#vetrh-app .vetrh-card-main { min-width: 0 !important; }
+#vetrh-app .vetrh-card-name {
+  font-family: var(--vetrh-serif) !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: var(--vetrh-navy) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.15 !important;
+  margin-bottom: 6px !important;
+}
+#vetrh-app .vetrh-card-trade {
+  font-style: italic !important;
+  font-size: 13.5px !important;
+  color: var(--vetrh-gold-dark) !important;
+  font-weight: 500 !important;
+  margin-bottom: 14px !important;
+}
+#vetrh-app .vetrh-card-badges {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin-bottom: 14px !important;
+}
+#vetrh-app .vetrh-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 11px !important;
+  background: rgba(20, 33, 61, 0.07) !important;
+  color: var(--vetrh-navy) !important;
+  border-radius: 100px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+#vetrh-app .vetrh-badge-alt { 
+  background: var(--vetrh-gold-grad-soft) !important;
+  color: var(--vetrh-gold-dark) !important;
+  border: 1px solid rgba(201, 165, 91, 0.25) !important;
+}
+#vetrh-app .vetrh-card-addr {
+  font-size: 13.5px !important;
+  color: var(--vetrh-ink-2) !important;
+  line-height: 1.55 !important;
+  display: flex !important;
+  gap: 9px !important;
+  align-items: flex-start !important;
+}
+#vetrh-app .vetrh-card-addr svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--vetrh-gold-dark);
+}
+#vetrh-app .vetrh-card-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  align-items: stretch !important;
+  min-width: 180px !important;
+}
+@media (max-width: 600px) {
+  #vetrh-app .vetrh-card { grid-template-columns: 1fr !important; padding: 20px !important; }
+  #vetrh-app .vetrh-card-actions { min-width: 0 !important; flex-direction: row !important; flex-wrap: wrap !important; }
+  #vetrh-app .vetrh-card-actions .vetrh-action { flex: 1 !important; min-width: 140px !important; }
+}
+#vetrh-app .vetrh-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 11px 18px !important;
+  border-radius: 100px !important;
+  font-family: var(--vetrh-sans) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all .15s !important;
+  border: 1.5px solid var(--vetrh-line-2) !important;
+  color: var(--vetrh-navy) !important;
+  background: #fff !important;
+  justify-content: center !important;
+  letter-spacing: 0.01em !important;
+}
+#vetrh-app .vetrh-action:hover { 
+  background: var(--vetrh-navy) !important; 
+  color: #fff !important; 
+  border-color: var(--vetrh-navy) !important;
+}
+#vetrh-app .vetrh-action-primary {
+  background: var(--vetrh-gold-grad) !important;
+  color: var(--vetrh-navy-deep) !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(201, 165, 91, 0.3) !important;
+}
+#vetrh-app .vetrh-action-primary:hover {
+  background: linear-gradient(135deg, #F2DDA4 0%, #E5C77E 50%, #C9A55B 100%) !important;
+  transform: translateY(-1px) !important;
+}
+#vetrh-app .vetrh-card-belge {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace !important;
+  font-size: 11px !important;
+  color: var(--vetrh-ink-3) !important;
+  margin-top: 14px !important;
+  letter-spacing: 0.06em !important;
+  padding-top: 12px !important;
+  border-top: 1px dashed var(--vetrh-line) !important;
+}
+
+#vetrh-app .vetrh-loadmore-wrap { 
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 32px !important;
+}
+#vetrh-app .vetrh-loadmore {
+  background: var(--vetrh-navy) !important;
+  border: 1.5px solid var(--vetrh-navy) !important;
+  color: #fff !important;
+  padding: 14px 36px !important;
+  border-radius: 100px !important;
+  font-family: var(--vetrh-sans) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all .15s !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+#vetrh-app .vetrh-loadmore:hover { 
+  background: var(--vetrh-gold-grad) !important;
+  border-color: transparent !important;
+  color: var(--vetrh-navy-deep) !important;
+}
+
+#vetrh-app .vetrh-footer {
+  background: var(--vetrh-navy) !important;
+  color: rgba(255,255,255,0.6) !important;
+  padding: 36px 24px !important;
+  text-align: center !important;
+  font-size: 12.5px !important;
+  line-height: 1.7 !important;
+  position: relative !important;
+  margin: 0 !important;
+}
+#vetrh-app .vetrh-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--vetrh-gold-grad);
+  opacity: 0.5;
+}
+
+#vetrh-app .vetrh-loading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 60px 20px !important;
+  gap: 18px !important;
+  background: #fff !important;
+  border-radius: 16px !important;
+  border: 1px dashed var(--vetrh-line) !important;
+}
+#vetrh-app .vetrh-spinner {
+  width: 44px; height: 44px;
+  border: 3px solid var(--vetrh-line);
+  border-top-color: var(--vetrh-gold);
+  border-radius: 50%;
+  animation: vetrh-spin 0.9s linear infinite;
+}
+#vetrh-app .vetrh-loading-text {
+  color: var(--vetrh-ink-2) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.04em !important;
+}
+#vetrh-app .vetrh-error {
+  background: #fff !important;
+  border: 1px solid #E5A097 !important;
+  color: #8E2E1F !important;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+@keyframes vetrh-spin { to { transform: rotate(360deg); } }
+
+#vetrh-app mark { 
+  background: rgba(201, 165, 91, 0.30) !important; 
+  color: var(--vetrh-navy) !important; 
+  padding: 1px 3px !important; 
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+}
+@keyframes vetrh-fadeUp { 
+  from { opacity: 0; transform: translateY(8px); } 
+  to { opacity: 1; transform: none; }
+}
+#vetrh-app .vetrh-card { animation: vetrh-fadeUp .25s ease both; }
